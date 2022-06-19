@@ -3,8 +3,9 @@ const jwt = require("jsonwebtoken");
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
 
+//Modelo del usuario para utilizar con mongoose y mong a traves de Schema
 const userSchema = new mongoose.Schema({
-	userName: { type: String, required: true },
+	email: { type: String, required: true },
 	password: { type: String, required: true },
 });
 
@@ -19,7 +20,7 @@ const User = mongoose.model("user", userSchema);
 
 const validate = (data) => {
 	const schema = Joi.object({
-		userName: Joi.string().required().label("User Name"),
+		email: Joi.string().email().required().label("Email"),
 		password: passwordComplexity().required().label("Password"),
 	});
 	return schema.validate(data);

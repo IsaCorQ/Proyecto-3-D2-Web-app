@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//conexión con mongo utilizando mongoose
 module.exports = () => {
 	const connectionParams = {
 		useNewUrlParser: true,
