@@ -3,8 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
+//Funciones pertenecientes al log in y parte grafica de esta
 const Login = () => {
-	const [data, setData] = useState({ userName: "", password: "" });
+	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
 
 	const handleChange = ({ currentTarget: input }) => {
@@ -36,11 +37,11 @@ const Login = () => {
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>
 						<input
-							type="userName"
-							placeholder="User Name"
-							name="userName"
+							type="email"
+							placeholder="Email"
+							name="email"
 							onChange={handleChange}
-							value={data.userName}
+							value={data.email}
 							required
 							className={styles.input}
 						/>

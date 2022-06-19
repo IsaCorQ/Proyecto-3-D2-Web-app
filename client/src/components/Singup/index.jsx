@@ -3,9 +3,10 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
+//Funciones pertenecientes al sign up y parte grafica de esta
 const Signup = () => {
 	const [data, setData] = useState({
-		userName: "",
+		email: "",
 		password: "",
 	});
 	const [error, setError] = useState("");
@@ -48,11 +49,11 @@ const Signup = () => {
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Create Account</h1>
 						<input
-							type="text"
-							placeholder="User Name"
-							name="userName"
+							type="email"
+							placeholder="Email"
+							name="email"
 							onChange={handleChange}
-							value={data.userName}
+							value={data.email}
 							required
 							className={styles.input}
 						/>
